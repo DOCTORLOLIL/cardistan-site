@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>כארדיסטאן | בנו את האלבום של הקהילה שלכם</title>
+<meta name="description" content="הקהילה שלכם, על קלפים. בנו אלבום קלפי אספנות דיגיטלי שאנשים יאספו, יחליפו ויתחרו עליו.">
+<meta property="og:title" content="כארדיסטאן | הקהילה שלכם, על קלפים">
+<meta property="og:image" content="https://cardistan.bulu.ltd/icon.png">
+<link rel="icon" type="image/png" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<style>
+:root{--bg:#070A12;--panel:#0E1424;--line:#24304A;--ink:#EEF2FA;--mut:#B3BDD1;--gold:#FFD27A;--gold2:#D99A1E;--blue:#3C8DFF;--warn:#FFB020}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;line-height:1.65;font-size:18px;overflow-x:hidden}
+.skip{position:absolute;inset-inline-start:-9999px;top:8px;background:#fff;color:#000;padding:8px 14px;border-radius:8px;z-index:10}
+.skip:focus{inset-inline-start:8px}
+a{color:var(--gold);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--warn);outline-offset:3px}
+header{display:flex;justify-content:space-between;align-items:center;max-width:1080px;margin:0 auto;padding:16px 20px;position:relative;z-index:2}
+header a.home{color:var(--mut);text-decoration:none;display:flex;align-items:center;gap:10px;font-weight:700}
+header a.home img{width:36px;height:36px;border-radius:9px}
+button{font:inherit;cursor:pointer;min-height:48px;border-radius:12px;border:0;padding:0 18px;font-weight:700}
+.lang{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:24px 0 72px;background:radial-gradient(900px 500px at 70% 10%,#2A3E7A55,transparent 70%),radial-gradient(700px 500px at 15% 60%,#5A380040,transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{display:inline-block;color:var(--gold);border:1px solid #FFD27A55;border-radius:99px;padding:4px 14px;font-size:15px;letter-spacing:.5px;background:#FFD27A10}
+h1{font-size:clamp(40px,6.4vw,72px);line-height:1.08;margin:18px 0 18px;font-weight:900;letter-spacing:-.5px}
+h1 .g{background:linear-gradient(100deg,#FFF3C4,#FFD27A 30%,#fff 48%,#D99A1E 68%,#FFE08A);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:goldflow 6s linear infinite}
+@keyframes goldflow{to{background-position:-200% 0}}
+.lead{font-size:clamp(18px,2.2vw,21px);color:var(--mut);max-width:560px;margin:0 0 28px}
+.cta{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:16px;font-weight:900;font-size:19px;text-decoration:none;color:#1A1200;background:linear-gradient(180deg,#FFE7A3,#FFC84A 55%,#E0A21E);box-shadow:0 10px 30px #FFB02040,inset 0 1px 0 #fff8;transition:transform .2s,box-shadow .2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px #FFB02060,inset 0 1px 0 #fff8}
+.cta svg{width:22px;height:22px}
+[dir=rtl] .cta svg{transform:scaleX(-1)}
+
+/* ---------- card stage ---------- */
+.stage{position:relative;height:440px;perspective:1100px;display:flex;justify-content:center;align-items:center}
+.glowfloor{position:absolute;bottom:20px;width:300px;height:60px;background:radial-gradient(closest-side,#FFD27A55,transparent);filter:blur(8px)}
+.back,.card{position:absolute;width:240px;aspect-ratio:1/1.42;border-radius:17px;padding:11px;transform-origin:50% 100%}
+.back{background:linear-gradient(135deg,#2A2F3A,#C9A54E 20%,#6B5523 40%,#FFE7A3 50%,#6B5523 70%,#2A2F3A);box-shadow:0 18px 40px #000a}
+.back i{display:block;height:100%;border-radius:11px;background:radial-gradient(circle at 50% 50%,#1B2547,#070B16 75%);position:relative;overflow:hidden}
+.back i::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,#FFD27A14 0 1px,transparent 1px 26px),repeating-linear-gradient(-45deg,#FFD27A14 0 1px,transparent 1px 26px)}
+.back i::after{content:"";position:absolute;inset:12px;border:1.5px solid #FFD27A88;border-radius:9px}
+.back.b1{transform:rotate(-17deg) translateX(-30px)}
+.back.b2{transform:rotate(-8deg) translateX(-14px)}
+[dir=ltr] .back.b1{transform:rotate(17deg) translateX(30px)}
+[dir=ltr] .back.b2{transform:rotate(8deg) translateX(14px)}
+.card{transform-style:preserve-3d;transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .15s ease-out;
+ background:linear-gradient(calc(135deg + var(--la,0deg)),#5A3800,#FFE08A 18%,#D99A1E 35%,#FFF8E1 50%,#D99A1E 65%,#5A3800 85%,#FFE08A);
+ box-shadow:0 0 50px #D99A1E66,0 24px 50px #000c}
+.card .in{position:relative;height:100%;border-radius:11px;overflow:hidden;border:1.5px solid #0009;background:radial-gradient(circle at 50% 55%,#4A3410,#0B0805 75%)}
+.card .in::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 40%,#ffffff40 48%,#fff8 50%,#ffffff40 52%,transparent 60%);transform:translateX(-60%);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,35%{transform:translateX(-60%)}75%,100%{transform:translateX(60%)}}
+.card .name{position:absolute;top:10px;inset-inline:10px;display:flex;justify-content:space-between;align-items:center;font-weight:900;color:#FFF3C4;font-size:17px;text-shadow:0 0 10px #FFB000aa}
+.card .name small{font-size:11px;color:#1A1200;background:linear-gradient(#FFE08A,#D99A1E);border-radius:6px;padding:1px 7px}
+.card .beam{position:absolute;left:50%;bottom:62px;width:150px;height:240px;transform:translateX(-50%);background:linear-gradient(to top,#FFD27A55,transparent);clip-path:polygon(30% 100%,70% 100%,100% 0,0 0);filter:blur(2px)}
+.card svg.fig{position:absolute;left:50%;bottom:66px;transform:translateX(-50%);width:120px;height:180px}
+.card .podium{position:absolute;left:50%;bottom:52px;transform:translateX(-50%);width:150px;height:30px;border-radius:50%;background:radial-gradient(ellipse at 50% 35%,#FFF2C2,#D99A1E 45%,#5A3800 80%);box-shadow:0 0 18px #FFB000aa}
+.card .stats{position:absolute;bottom:10px;inset-inline:10px;display:flex;gap:6px}
+.card .stats span{flex:1;text-align:center;font-size:12px;font-weight:800;color:#fff;background:#ffffff1c;border:1px solid #ffffff33;border-radius:8px;padding:3px 0;backdrop-filter:blur(4px)}
+.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px #FFE7A3;animation:tw 2.6s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1)}}
+
+/* ---------- sections ---------- */
+section{padding:72px 0;position:relative}
+section.alt{background:linear-gradient(180deg,#0B1020,#0E1530 50%,#0B1020)}
+h2{font-size:clamp(30px,4.2vw,46px);line-height:1.15;margin:0 0 16px;font-weight:900}
+h2 .g{color:var(--gold)}
+.sub{color:var(--mut);max-width:720px;font-size:19px;margin:0 0 8px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ticks{list-style:none;padding:0;margin:20px 0}
+.ticks li{position:relative;padding-inline-start:38px;margin:12px 0;font-size:18px}
+.ticks li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:26px;height:26px;border-radius:50%;background:linear-gradient(#FFE08A,#D99A1E);box-shadow:0 0 12px #FFB00066}
+.ticks li::after{content:"";position:absolute;inset-inline-start:8px;top:9px;width:10px;height:6px;border-left:3px solid #1A1200;border-bottom:3px solid #1A1200;transform:rotate(-45deg)}
+.panel{background:linear-gradient(180deg,#141C36,#0D1326);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 20px 50px #0008}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.why div{background:#ffffff08;border:1px solid var(--line);border-radius:18px;padding:22px}
+.why b{display:block;font-size:20px;margin-bottom:6px;color:var(--gold)}
+.why p{margin:0;color:var(--mut);font-size:17px}
+
+/* tiers */
+.tiers{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:36px;align-items:start}
+.tier{text-align:center}
+.tier .mini{margin:0 auto 12px;width:100%;max-width:120px;aspect-ratio:1/1.42;border-radius:12px;padding:6px;transition:transform .3s}
+.tier .mini i{display:block;height:100%;border-radius:8px;background:radial-gradient(circle at 50% 60%,var(--c),#05070D 80%)}
+.tier:hover .mini{transform:translateY(-8px) rotate(-2deg)}
+.tier b{display:block;font-size:18px}
+.tier span{display:block;color:var(--mut);font-size:15px;line-height:1.4}
+.t1 .mini{background:linear-gradient(135deg,#3E4452,#DDE3EE,#9AA4B8,#fff,#3E4452);--c:#333B4D}
+.t2 .mini{background:linear-gradient(135deg,#0B3F22,#8FF0B4,#2FAE5E,#E6FFF0,#0B3F22);--c:#123F2A;box-shadow:0 0 14px #2FAE5E44}
+.t3 .mini{background:linear-gradient(135deg,#0A2560,#9CC6FF,#2F7BEA,#EAF3FF,#0A2560);--c:#11306E;box-shadow:0 0 18px #2F7BEA66}
+.t4 .mini{background:linear-gradient(135deg,#2E0F5C,#CDA6FF,#8A3FE8,#F4EAFF,#2E0F5C);--c:#3A1670;box-shadow:0 0 22px #8A3FE877}
+.t5 .mini{background:linear-gradient(135deg,#5A3800,#FFE08A,#D99A1E,#FFF8E1,#5A3800);--c:#5A3E10;box-shadow:0 0 28px #D99A1E88}
+.t6 .mini{background:linear-gradient(135deg,#000,#8C6A25,#000,#D4A84A,#000);--c:#14100A;box-shadow:0 0 30px #D4A84A88}
+.t6 .mini i{background:radial-gradient(circle at 50% 60%,#1A1508,#050507 80%),#000;position:relative;overflow:hidden}
+.t6 .mini i::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,#D4A84A 31%,transparent 33%),linear-gradient(60deg,transparent 55%,#D4A84Aaa 56%,transparent 57.5%),linear-gradient(160deg,transparent 70%,#D4A84A88 71%,transparent 72%)}
+.t7 .mini{background:conic-gradient(#fff,#E8F0FF,#FFEAF6,#EFFFF4,#FFFBE6,#fff);box-shadow:0 0 36px #ffffffaa}
+.t7 .mini i{background:radial-gradient(circle at 50% 60%,#fff,#E9EDF5 80%)}
+.scarcity{margin-top:28px;display:flex;align-items:center;gap:12px;color:var(--mut);font-size:16px}
+.scarcity .bar{flex:1;height:10px;border-radius:99px;background:linear-gradient(90deg,#9AA4B8,#2FAE5E,#2F7BEA,#8A3FE8,#D99A1E,#8C6A25,#fff)}
+[dir=rtl] .scarcity .bar{background:linear-gradient(-90deg,#9AA4B8,#2FAE5E,#2F7BEA,#8A3FE8,#D99A1E,#8C6A25,#fff)}
+
+/* feature grid */
+.feats{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px}
+.feat{background:linear-gradient(180deg,#131B33,#0C1224);border:1px solid var(--line);border-radius:24px;padding:28px;position:relative;overflow:hidden}
+.feat::before{content:"";position:absolute;inset-inline-end:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(closest-side,var(--h,#3C8DFF33),transparent)}
+.feat .ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:#ffffff0c;border:1px solid #ffffff1c;margin-bottom:16px}
+.feat .ico svg{width:36px;height:36px}
+.feat h3{font-size:24px;margin:0 0 10px;line-height:1.25}
+.feat p{margin:0 0 10px;color:var(--mut)}
+.feat p.punch{color:var(--ink);font-weight:700;margin:0}
+.feat.wide{grid-column:1/-1}
+
+/* control strip */
+.control{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.control div{border:1px dashed #FFD27A55;border-radius:16px;padding:16px;text-align:center;font-weight:800;color:var(--gold);background:#FFD27A08}
+
+/* final */
+.final{text-align:center;padding:96px 0 110px;background:radial-gradient(700px 360px at 50% 40%,#5A380055,transparent 70%),radial-gradient(900px 400px at 50% 100%,#2A3E7A55,transparent 70%)}
+.final h2{font-size:clamp(34px,5vw,58px)}
+.final .sub{margin:0 auto 32px}
+footer{text-align:center;color:var(--mut);font-size:14px;padding:20px;border-top:1px solid var(--line)}
+footer a{color:var(--mut)}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+
+@media (max-width:860px){
+ .hero .wrap,.split{grid-template-columns:1fr}
+ .stage{height:380px;order:-1}
+ .why,.feats{grid-template-columns:1fr}
+ .tiers{grid-template-columns:repeat(4,1fr);row-gap:24px}
+ .control{grid-template-columns:repeat(2,1fr)}
+ .back,.card{width:210px}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-he="דילוג לתוכן" data-en="Skip to content"></a>
+<header>
+ <a class="home" href="/"><img src="/icon.png" alt=""><span data-he="כארדיסטאן" data-en="Cardistan"></span></a>
+ <button class="lang" id="lang" type="button"></button>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<div class="hero">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow" data-he="לאוצרים · בוני אלבומים" data-en="For curators · album builders"></span>
+   <h1><span data-he="הקהילה שלכם," data-en="Your community,"></span><br><span class="g" data-he="על קלפים." data-en="on cards."></span></h1>
+   <p class="lead" data-he="התלמידים, השחקנים, המדריכים והצופים שלכם הופכים לקלפי אספנות דיגיטליים. אנשים יאספו אותם, יחליפו ביניהם ויתחרו עליהם. אתם בונים את האלבום, וכל השאר קורה מעצמו." data-en="Your students, players, coaches and viewers become digital collectible cards. People will collect them, trade them and compete for them. You build the album, and the rest happens on its own."></p>
+   <a class="cta mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-he="אני רוצה לבנות אלבום" data-en="I want to build an album"></span></a>
+  </div>
+  <div class="stage" aria-hidden="true">
+   <div class="glowfloor"></div>
+   <div class="back b1"><i></i></div>
+   <div class="back b2"><i></i></div>
+   <div class="card" id="card">
+    <div class="in">
+     <div class="name"><span data-he="הדמות שלכם" data-en="Your star"></span><small>L</small></div>
+     <div class="beam"></div>
+     <svg class="fig" viewBox="0 0 120 180"><defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF3C4"/><stop offset="1" stop-color="#D99A1E"/></linearGradient></defs><circle cx="60" cy="38" r="26" fill="url(#fg)"/><path d="M14 180c0-52 18-92 46-92s46 40 46 92z" fill="url(#fg)"/></svg>
+     <div class="podium"></div>
+     <div class="stats"><span>♥ 92</span><span>⚔ 78</span><span>⛨ 64</span></div>
+     <i class="spark" style="top:22%;left:18%"></i><i class="spark" style="top:40%;left:80%;animation-delay:.9s"></i><i class="spark" style="top:62%;left:24%;animation-delay:1.7s"></i>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- WHY -->
+<section>
+ <div class="wrap rv">
+  <h2 data-he="למה זה עובד" data-en="Why it works"></h2>
+  <p class="sub" data-he="אנשים אוהבים לראות את עצמם ואת החברים שלהם על קלף, ועוד יותר אוהבים להשלים אוסף." data-en="People love seeing themselves and their friends on a card, and they love completing a collection even more."></p>
+  <div class="why">
+   <div><b data-he="סיבה לחזור" data-en="A reason to come back"></b><p data-he="עוד חפיסה, עוד החלפה, עוד קרב. האלבום נותן לקהילה סיבה לדבר, להיפגש ולחזור." data-en="One more pack, one more trade, one more battle. The album gives your community a reason to talk, meet and come back."></p></div>
+   <div><b data-he="אפס לוגיסטיקה" data-en="Zero logistics"></b><p data-he="בלי הדפסה, בלי משלוחים ובלי תקציב לקלפים פיזיים. הכול בטלפון." data-en="No printing, no shipping, no budget for physical cards. It all lives on the phone."></p></div>
+   <div><b data-he="לא הולך לאיבוד" data-en="Never lost"></b><p data-he="אף קלף לא נקרע, לא נשכח בכיס ולא מתכבס עם המכנסיים." data-en="No card gets torn, forgotten in a pocket or washed with the jeans."></p></div>
+  </div>
+ </div>
+</section>
+
+<!-- CURATOR -->
+<section class="alt">
+ <div class="wrap split rv">
+  <div>
+   <h2><span data-he="האוצר:" data-en="The curator:"></span> <span class="g" data-he="מי שמחליט מה נכנס לאלבום" data-en="you decide what goes in"></span></h2>
+   <p class="sub" data-he="אתם בוחרים את הדמויות, את השמות ואת הדרגה של כל קלף. אתם גם קובעים אילו חפיסות יהיו ומה הסיכוי לנדיר בכל אחת." data-en="You choose the people, the names and the tier of every card. You also decide which packs exist and the odds of a rare in each one."></p>
+   <p class="sub" data-he="אחר כך אתם מפיקים את האלבום, ומהרגע הזה הוא חי." data-en="Then you produce the album, and from that moment it's alive."></p>
+  </div>
+  <div class="panel">
+   <b data-he="המערכת עושה את העבודה הקשה בשבילכם:" data-en="The system does the hard work for you:"></b>
+   <ul class="ticks">
+    <li data-he="מסירה את הרקע מהתמונה" data-en="Removes the background from the photo"></li>
+    <li data-he="מגרילה לכל קלף נתונים לקרב" data-en="Rolls battle stats for every card"></li>
+    <li data-he="מוודאת שלא תעלו את אותה תמונה פעמיים" data-en="Makes sure you never upload the same photo twice"></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- TIERS -->
+<section>
+ <div class="wrap rv">
+  <h2><span data-he="שבע דרגות," data-en="Seven tiers,"></span> <span class="g" data-he="ולכל אחת יש ערך אמיתי" data-en="each with real value"></span></h2>
+  <p class="sub" data-he="הכמות של כל קלף מוגבלת מראש לפי הדרגה שלו, ואף אחד לא יכול להדפיס עוד עותקים. בגלל זה לקלף נדיר יש ערך." data-en="Every card's quantity is capped up front by its tier, and nobody can print more copies. That's why a rare card is worth something."></p>
+  <div class="tiers">
+   <div class="tier t1"><div class="mini" aria-hidden="true"><i></i></div><b data-he="נפוץ" data-en="Common"></b><span data-he="הבסיס של האוסף. הרבה עותקים, קל להשיג" data-en="The base of the collection. Plenty of copies"></span></div>
+   <div class="tier t2"><div class="mini" aria-hidden="true"><i></i></div><b data-he="לא נפוץ" data-en="Uncommon"></b><span data-he="מתחילים להתאמץ" data-en="Now you have to try"></span></div>
+   <div class="tier t3"><div class="mini" aria-hidden="true"><i></i></div><b data-he="נדיר" data-en="Rare"></b><span data-he="מסגרת כחולה. כבר שווה להתרברב" data-en="Blue frame. Worth showing off"></span></div>
+   <div class="tier t4"><div class="mini" aria-hidden="true"><i></i></div><b data-he="אפי" data-en="Epic"></b><span data-he="מסגרת סגולה. מעט עותקים" data-en="Purple frame. Few copies"></span></div>
+   <div class="tier t5"><div class="mini" aria-hidden="true"><i></i></div><b data-he="לג'נדרי" data-en="Legendary"></b><span data-he="מסגרת זהב. מעטים יחזיקו בו" data-en="Gold frame. Few will ever hold one"></span></div>
+   <div class="tier t6"><div class="mini" aria-hidden="true"><i></i></div><b data-he="אופל" data-en="Opal"></b><span data-he="שחור לילה עם עורקי זהב. כמעט אגדה" data-en="Night black with gold veins. Almost a legend"></span></div>
+   <div class="tier t7"><div class="mini" aria-hidden="true"><i></i></div><b data-he="טהור" data-en="Pure"></b><span data-he="פנינה לבנה. העותקים הבודדים ביותר באלבום" data-en="White pearl. The rarest copies in the album"></span></div>
+  </div>
+  <div class="scarcity" aria-hidden="true"><span data-he="הרבה עותקים" data-en="Many copies"></span><div class="bar"></div><span data-he="כמעט אין" data-en="Almost none"></span></div>
+ </div>
+</section>
+
+<!-- FEATURES -->
+<section class="alt">
+ <div class="wrap">
+  <h2 class="rv"><span data-he="כל רגע באלבום" data-en="Every moment in the album"></span> <span class="g" data-he="בנוי לריגוש" data-en="is built to thrill"></span></h2>
+  <div class="feats">
+   <div class="feat rv" style="--h:#FFD27A33">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD27A" stroke-width="1.8" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path d="M8.5 17.5h7M12 7l1.4 2.9 3.1.4-2.3 2.1.6 3.1-2.8-1.5-2.8 1.5.6-3.1-2.3-2.1 3.1-.4z"/></svg></div>
+    <h3 data-he="כל קלף נראה כמו פריט אספנות" data-en="Every card looks like a collector's item"></h3>
+    <p data-he="מסגרת מתכת מלוטשת בצבע הדרגה שתופסת את האור כשמטים את הטלפון, ברק שזז על הקלף, נצנוצים, וכל דמות עומדת על במה מוארת." data-en="A polished metal frame in the tier's color that catches the light as you tilt the phone, a moving shine, sparkles, and every figure standing on a lit stage."></p>
+    <p class="punch" data-he="זה לא צילום עם מסגרת. זה קלף שבא להחזיק ולהראות, עם גב קלפים משלכם או עיצוב מוכן." data-en="Not a photo in a frame. A card you want to hold and show off, with your own card back or a ready-made design."></p>
+   </div>
+   <div class="feat rv" style="--h:#35D07F33">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#35D07F" stroke-width="1.8" aria-hidden="true"><path d="M12 2.5l8 3v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+    <h3 data-he="מקורי, וניתן להוכיח את זה" data-en="Original, and provably so"></h3>
+    <p data-he="לכל עותק יש מספר סידורי וחתימה דיגיטלית. ה-QR שעל הקלף מאמת אותו מול השרת בשנייה." data-en="Every copy has a serial number and a digital signature. The QR on the card verifies it against the server in a second."></p>
+    <p class="punch" data-he="אי אפשר לזייף. למי שמחזיק עותק מקורי יש משהו שבאמת שלו." data-en="It can't be faked. Whoever holds an original owns something truly theirs."></p>
+   </div>
+   <div class="feat rv" style="--h:#A25BFF33">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#CDA6FF" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="10" height="14" rx="2" transform="rotate(-12 8 12)"/><rect x="11" y="4" width="10" height="15" rx="2"/><path d="M16 9v5M13.5 11.5h5"/></svg></div>
+    <h3 data-he="פתיחת חפיסה שמייצרת ריגוש" data-en="Pack openings that build excitement"></h3>
+    <p data-he="הקלפים מוגשים פרושים, גב למעלה. כל הקשה הופכת קלף אחד, עם צליל שמתאים לדרגה שלו, והנדיר ביותר תמיד נשמר לסוף." data-en="The cards are dealt fanned out, face down. Each tap flips one, with a sound that matches its tier, and the rarest is always saved for last."></p>
+    <p class="punch" data-he="הרגע הזה הוא שגורם לאנשים לבקש עוד חפיסה." data-en="That moment is what makes people ask for another pack."></p>
+   </div>
+   <div class="feat rv" style="--h:#FF5F6D33">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FF8A94" stroke-width="1.8" aria-hidden="true"><path d="M4 20l9-9M4 16l4 4M15 3h6v6L11 19M20 20l-9-9M20 16l-4 4M9 3H3v6l10 10"/></svg></div>
+    <h3 data-he="QWAR: הקלפים נלחמים" data-en="QWAR: the cards fight"></h3>
+    <p data-he="סורקים את הקוד של חבר, בוחרים קלף, והקרב מתחיל. הוא מוכרע בשרת, כך שאין דרך לרמות, וכל מכה מוצגת באנימציה." data-en="Scan a friend's code, pick a card, and the battle begins. It's decided on the server so nobody can cheat, and every blow is animated."></p>
+    <p class="punch" data-he="קלף שנלחם הרבה מתעייף וצריך לנוח, אז כדאי להחזיק כמה קלפים חזקים." data-en="A card that fights a lot gets tired and needs rest, so it pays to hold several strong cards."></p>
+   </div>
+   <div class="feat rv" style="--h:#3C8DFF33">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#9CC6FF" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><path d="M14 5h4a2 2 0 012 2v3M17.5 8.5L20 11l2.5-2.5M10 19H6a2 2 0 01-2-2v-3M6.5 15.5L4 13l-2.5 2.5"/></svg></div>
+    <h3 data-he="החלפות הוגנות" data-en="Fair trades"></h3>
+    <p data-he="שתי כספות, אחת שלך ואחת של החבר. מד ההוגנות מראה אם ההחלפה מאוזנת ולא נותן לנצל מישהו. כששני הצדדים נועלים, יש חמש שניות להתחרט, ואז הכספות מתחלפות." data-en="Two vaults, yours and your friend's. The fairness meter shows whether the trade is balanced and won't let anyone be taken advantage of. Once both sides lock, there are five seconds to back out, then the vaults swap."></p>
+    <p class="punch" data-he="קלף שמגיע ממישהו אחר מגיע שמח, ומתאושש מהר יותר." data-en="A card that comes from someone else arrives happy, and recovers faster."></p>
+   </div>
+   <div class="feat rv" style="--h:#FFB02033">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC84A" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16l-1.5 12a2 2 0 01-2 1.8h-9a2 2 0 01-2-1.8z"/><path d="M8 7V5.5a4 4 0 018 0V7M12 11v5M9.5 13.5L12 11l2.5 2.5"/></svg></div>
+    <h3 data-he="שום כפול לא הולך לפח" data-en="No duplicate goes to waste"></h3>
+    <p data-he="קלף שכבר יש לך נכנס לכיס הכפולים, ושם הוא מטבע להחלפות." data-en="A card you already have goes into the duplicates pocket, where it becomes currency for trades."></p>
+    <p class="punch" data-he="ואם קלף מהכיס חסר לך באלבום, הוא קופץ ומבקש לעבור לשם." data-en="And if a card in the pocket is missing from your album, it pops up and asks to move there."></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- CONTROL -->
+<section>
+ <div class="wrap rv">
+  <h2><span data-he="אתם" data-en="You're in"></span> <span class="g" data-he="בשליטה מלאה" data-en="full control"></span></h2>
+  <p class="sub" data-he="אתם ממנים מפיצים, והם מחלקים את החפיסות בכל דרך שתבחרו. אתם מחליטים כמה חפיסות יוצאות ומתי, וכל האלבום סגור לקהילה שלכם בלבד." data-en="You appoint distributors, and they hand out packs any way you choose. You decide how many packs go out and when, and the whole album is closed to your community only."></p>
+  <div class="control">
+   <div data-he="כפרס" data-en="As a prize"></div>
+   <div data-he="בהגרלה" data-en="In a raffle"></div>
+   <div data-he="באירוע" data-en="At an event"></div>
+   <div data-he="בכל דרך שתבחרו" data-en="Any way you like"></div>
+  </div>
+ </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+ <div class="wrap rv">
+  <h2><span data-he="בואו נבנה את האלבום" data-en="Let's build your"></span><br><span class="g" data-he="של הקהילה שלכם." data-en="community's album."></span></h2>
+  <p class="sub" data-he="כתבו לנו כמה מילים על הקהילה, ונחזור אליכם עם כל מה שצריך כדי להתחיל." data-en="Tell us a few words about your community, and we'll get back to you with everything you need to start."></p>
+  <a class="cta mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-he="אני רוצה לבנות אלבום" data-en="I want to build an album"></span></a>
+ </div>
+</section>
+</main>
+
+<footer>&copy; 2026 bulu.ltd · <a href="/" data-he="כארדיסטאן" data-en="Cardistan"></a> · <a href="https://bulu.ltd/accessibility/" data-he="הצהרת נגישות" data-en="Accessibility statement"></a></footer>
+
+<script>
+(function(){
+var T={
+ he:{title:'כארדיסטאן | בנו את האלבום של הקהילה שלכם',subj:'אני רוצה לבנות אלבום בכארדיסטאן',body:'היי,\nאני רוצה לבנות אלבום קלפים לקהילה שלי.\n\nשם הקהילה:\nמה היא (בית ספר, מועדון, קבוצה...):\nכמה אנשים בערך:\nאיך אפשר לחזור אליי:\n'},
+ en:{title:'Cardistan | Build your community\'s album',subj:'I want to build a Cardistan album',body:'Hi,\nI want to build a card album for my community.\n\nCommunity name:\nWhat it is (school, club, team...):\nRoughly how many people:\nHow to reach me:\n'}
+};
+var L='he';
+try{var s=localStorage.getItem('bulu_lang');if(s==='he'||s==='en')L=s;else L=((navigator.language||'he').toLowerCase().indexOf('he')===0)?'he':'en';}catch(e){}
+function apply(){
+ var t=T[L];document.documentElement.lang=L;document.documentElement.dir=L==='he'?'rtl':'ltr';document.title=t.title;
+ var n=document.querySelectorAll('[data-he]');for(var i=0;i<n.length;i++)n[i].textContent=n[i].getAttribute('data-'+L);
+ var href='mailto:cardistan@bulu.ltd?subject='+encodeURIComponent(t.subj)+'&body='+encodeURIComponent(t.body);
+ var m=document.querySelectorAll('a.mail');for(i=0;i<m.length;i++)m[i].href=href;
+ var b=document.getElementById('lang');b.textContent=L==='he'?'EN':'עב';b.setAttribute('aria-label',L==='he'?'English':'עברית');
+}
+document.getElementById('lang').addEventListener('click',function(){L=L==='he'?'en':'he';try{localStorage.setItem('bulu_lang',L);}catch(e){}apply();});
+apply();
+
+// Reveal sections as they scroll in.
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.15});
+ rv.forEach(function(el){io.observe(el);});
+}else rv.forEach(function(el){el.classList.add('on');});
+
+// The hero card tilts with the pointer (or drifts gently by itself).
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var card=document.getElementById('card');
+function tilt(x,y){card.style.setProperty('--ry',(x*22)+'deg');card.style.setProperty('--rx',(-y*16)+'deg');card.style.setProperty('--la',(x*40)+'deg');}
+if(!reduce){
+ var t0=performance.now(),user=0;
+ window.addEventListener('pointermove',function(e){user=performance.now();tilt(e.clientX/innerWidth-.5,e.clientY/innerHeight-.5);});
+ (function drift(t){if(t-user>2500){var a=(t-t0)/1800;tilt(Math.sin(a)*.35,Math.cos(a*.8)*.25);}requestAnimationFrame(drift);})(t0);
+}
+})();
+</script>
+</body>
+</html>
