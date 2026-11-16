@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "ltd.bulu.cardistan",
+    "sha256_cert_fingerprints": ["C2:9D:B5:CE:BA:AA:6E:20:54:3F:83:3D:1D:B2:5E:88:0E:11:EA:46:53:0F:2B:03:C4:18:CC:C6:BC:DA:DD:78"]
+  }
+}]
