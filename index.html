@@ -63,6 +63,12 @@ footer a{color:var(--mut)}
     <p><a href="/test/" data-he="להורדת גרסת הניסיון לאנדרואיד" data-en="Download the Android test version"></a></p>
   </section>
 
+  <section aria-labelledby="th" id="tradeinv" hidden>
+    <h2 id="th" data-he="הזמנה להחלפת קלפים" data-en="Card trade invitation"></h2>
+    <p data-he="פתחו את הקישור הזה בטלפון שבו מותקנת כארדיסטאן, והכספות ייפתחו. אין לכם את האפליקציה? הורידו את גרסת הניסיון ופתחו שוב את הקישור." data-en="Open this link on the phone with Cardistan installed and the vaults will open. Don't have the app? Get the test version and open the link again."></p>
+    <p><a href="/test/" data-he="להורדת גרסת הניסיון לאנדרואיד" data-en="Download the Android test version"></a></p>
+  </section>
+
   <section aria-labelledby="bh" id="battle" hidden>
     <h2 id="bh" data-he="קיבלתם אתגר QWAR!" data-en="You got a QWAR challenge!"></h2>
     <p data-he="פתחו את אפליקציית כארדיסטאן, היכנסו לאלבום, לחצו QWAR ואז &quot;קבל אתגר&quot;, וסרקו את הקוד או הדביקו את הקישור הזה. האתגר בתוקף 10 דקות." data-en="Open the Cardistan app, go to the album, tap QWAR and then &quot;Accept a challenge&quot;, and scan the code or paste this link. The challenge is valid for 10 minutes."></p>
@@ -131,6 +137,7 @@ document.getElementById('lang').addEventListener('click',function(){L=L==='he'?'
 document.getElementById('vf').addEventListener('submit',function(e){e.preventDefault();check(document.getElementById('code').value);});
 apply();
 if(new URLSearchParams(location.search).get('b'))document.getElementById('battle').hidden=false;
+if(new URLSearchParams(location.search).get('t'))document.getElementById('tradeinv').hidden=false;
 if(new URLSearchParams(location.search).get('i'))document.getElementById('invite').hidden=false;
 var q=new URLSearchParams(location.search).get('v');
 if(q){document.getElementById('code').value=q;check(q);}
