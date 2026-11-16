@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>כארדיסטאן | אימות קלף והורדה</title>
+<meta name="description" content="כארדיסטאן: אלבומי קלפים דיגיטליים לקהילות. אימות קלף והורדת האפליקציה.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+:root{--bg:#070A12;--panel:#0E1424;--line:#24304A;--ink:#EEF2FA;--mut:#A9B4CA;--gold:#FFD27A;--blue:#3C8DFF;--ok:#35D07F;--bad:#FF5F6D;--warn:#FFB020}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#1B2A55 0%,var(--bg) 60%);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;line-height:1.6;font-size:17px;min-height:100vh}
+.skip{position:absolute;inset-inline-start:-9999px;top:8px;background:#fff;color:#000;padding:8px 14px;border-radius:8px}
+.skip:focus{inset-inline-start:8px}
+a{color:var(--gold);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+header{display:flex;justify-content:space-between;align-items:center;max-width:820px;margin:0 auto;padding:16px 20px}
+header a.home{color:var(--mut);text-decoration:none}
+button{font:inherit;cursor:pointer;min-height:48px;border-radius:12px;border:0;padding:0 20px;font-weight:700}
+.lang{background:transparent;color:var(--ink);border:1px solid var(--line)}
+main{max-width:820px;margin:0 auto;padding:8px 20px 56px}
+.hero{text-align:center;padding:16px 0 8px}
+.hero img{width:136px;height:136px;border-radius:30px;box-shadow:0 0 60px #3C8DFF66,0 10px 30px #000a}
+h1{font-size:clamp(34px,7vw,56px);margin:18px 0 4px;letter-spacing:1px;background:linear-gradient(100deg,#FFF3C4,#FFD27A 35%,#fff 50%,#D99A1E 70%,#FFE08A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:var(--mut);margin:0 auto;max-width:560px}
+section{background:linear-gradient(180deg,#121A30,var(--panel));border:1px solid var(--line);border-radius:20px;padding:20px 22px;margin:22px 0;box-shadow:0 10px 30px #0006}
+h2{margin:0 0 10px;font-size:22px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input{flex:1;min-width:220px;min-height:48px;border-radius:12px;border:1px solid var(--line);background:#0A0F1C;color:var(--ink);padding:0 14px;font:inherit;direction:ltr;text-align:left}
+.primary{background:linear-gradient(180deg,#5AA2FF,#2F7BEA);color:#fff;box-shadow:0 6px 20px #2F7BEA55}
+.result{margin-top:16px;border-radius:16px;padding:16px;border:2px solid var(--line);display:none}
+.result.on{display:block}
+.result h3{margin:0 0 6px;font-size:24px}
+.ok{border-color:var(--ok)} .ok h3{color:var(--ok)}
+.bad{border-color:var(--bad)} .bad h3{color:var(--bad)}
+.unk{border-color:var(--warn)} .unk h3{color:var(--warn)}
+.serial{direction:ltr;font-family:Consolas,monospace;color:var(--mut)}
+.note{color:var(--mut);font-size:15px;margin-top:8px}
+.store{display:inline-flex;align-items:center;gap:10px;background:#000;border:1px solid #444;color:#fff;border-radius:12px;padding:10px 18px;opacity:.75}
+ul{padding-inline-start:22px;margin:6px 0}
+footer{text-align:center;color:var(--mut);font-size:14px;padding:20px}
+footer a{color:var(--mut)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-he="דילוג לתוכן" data-en="Skip to content">דילוג לתוכן</a>
+<header>
+  <a class="home" href="https://bulu.ltd/">bulu.ltd</a>
+  <button class="lang" id="lang" type="button" aria-label="English">EN</button>
+</header>
+<main id="main">
+  <div class="hero">
+    <img src="icon.png" alt="" width="136" height="136">
+    <h1 id="appname">כארדיסטאן</h1>
+    <p class="tag" data-he="אלבומי קלפים דיגיטליים לבתי ספר, מועדונים וקהילות. אוספים, פותחים חפיסות ונלחמים בקרבות QWAR." data-en="Digital card albums for schools, clubs and communities. Collect, open packs and fight QWAR battles."></p>
+  </div>
+
+  <section aria-labelledby="vh">
+    <h2 id="vh" data-he="אימות קלף" data-en="Verify a card"></h2>
+    <p data-he="סרקו את ה-QR שעל הקלף עם מצלמת הטלפון, או הדביקו כאן את הקוד שמתחתיו." data-en="Scan the QR on the card with your phone camera, or paste the code from under it here."></p>
+    <form class="row" id="vf">
+      <label for="code" class="skip" data-he="קוד הקלף" data-en="Card code"></label>
+      <input id="code" autocomplete="off" spellcheck="false" placeholder="HADAR-L-0042-0007-K7Q.XXXXXXXXXXXXXXXX">
+      <button class="primary" type="submit" data-he="בדיקה" data-en="Check"></button>
+    </form>
+    <div class="result" id="res" role="status" aria-live="polite"></div>
+  </section>
+
+  <section aria-labelledby="dh">
+    <h2 id="dh" data-he="הורדת האפליקציה" data-en="Get the app"></h2>
+    <p data-he="האפליקציה בפיתוח. גרסה לאנדרואיד תעלה בקרוב ל-Google Play, ואחריה לאייפון." data-en="The app is in development. An Android version is coming soon to Google Play, followed by iPhone."></p>
+    <span class="store" aria-disabled="true">&#9654; <span data-he="Google Play · בקרוב" data-en="Google Play · Soon"></span></span>
+    <p class="note" data-he="קיבלתם קישור הזמנה לאלבום? שמרו אותו. אחרי ההתקנה פותחים אותו מתוך האפליקציה." data-en="Got an album invite link? Keep it. After installing, open it from inside the app."></p>
+  </section>
+</main>
+<footer>&copy; 2026 bulu.ltd · <a href="https://bulu.ltd/accessibility/" data-he="הצהרת נגישות" data-en="Accessibility statement"></a></footer>
+<script>
+(function(){
+var SB='https://llnppjpkwsdkvzrrijtm.supabase.co', KEY='sb_publishable_d9ME8P_6Mv0vg-SXVsjs1w_dMwsS7b6';
+var T={
+ he:{app:'כארדיסטאן',title:'כארדיסטאן | אימות קלף והורדה',ok:'מקורי ✓',bad:'זיוף או שינוי ✗',unk:'לא נמצא קלף כזה',err:'לא הצלחנו לבדוק כרגע. נסו שוב.',held:'הקלף נמצא בבעלות אספן באלבום.',free:'הקלף עדיין לא בבעלות אספן.',shot:'צילום מסך אפשר להעתיק. מה שקובע הוא הבעלות הרשומה במערכת, ובעל הקלף רואה אותה באפליקציה.',hp:'חיים',atk:'התקפה',def:'הגנה',album:'אלבום',tiers:{common:'נפוץ',uncommon:'לא נפוץ',rare:'נדיר',epic:'אפי',legendary:"לג'נדרי",opal:'אופל',pure:'טהור'},wait:'בודק…'},
+ en:{app:'Cardistan',title:'Cardistan | Verify a card and get the app',ok:'Original ✓',bad:'Forged or altered ✗',unk:'No such card',err:"Couldn't check right now. Try again.",held:'This card is held by a collector in the album.',free:'This card is not held by a collector yet.',shot:'A screenshot can be copied. What counts is the ownership recorded in the system, which the owner can see in the app.',hp:'HP',atk:'Attack',def:'Defense',album:'Album',tiers:{common:'Common',uncommon:'Uncommon',rare:'Rare',epic:'Epic',legendary:'Legendary',opal:'Opal',pure:'Pure'},wait:'Checking…'}
+};
+var L='he', last=null;
+try{var s=localStorage.getItem('bulu_lang');if(s==='he'||s==='en')L=s;else L=((navigator.language||'he').toLowerCase().indexOf('he')===0)?'he':'en';}catch(e){}
+function esc(x){return String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function apply(){
+ var t=T[L];document.documentElement.lang=L;document.documentElement.dir=L==='he'?'rtl':'ltr';document.title=t.title;
+ document.getElementById('appname').textContent=t.app;
+ var n=document.querySelectorAll('[data-he]');for(var i=0;i<n.length;i++)n[i].textContent=n[i].getAttribute('data-'+L);
+ var b=document.getElementById('lang');b.textContent=L==='he'?'EN':'עב';b.setAttribute('aria-label',L==='he'?'English':'עברית');
+ if(last)show(last);
+}
+function show(r){
+ last=r;var t=T[L],el=document.getElementById('res'),h='';
+ if(r.err){el.className='result on unk';el.innerHTML='<h3>'+t.err+'</h3>';return;}
+ var cls=r.status==='original'?'ok':r.status==='forged'?'bad':'unk';
+ h='<h3>'+(r.status==='original'?t.ok:r.status==='forged'?t.bad:t.unk)+'</h3>';
+ if(r.serial)h+='<div class="serial">'+esc(r.serial)+'</div>';
+ if(r.status==='original'){
+  h+='<p><b>'+esc(r.card_name)+'</b> · '+esc(t.tiers[r.tier]||r.tier)+' · '+t.album+': '+esc(r.album_name)+'</p>';
+  h+='<p>'+t.hp+' '+esc(r.hp)+' · '+t.atk+' '+esc(r.attack)+' · '+t.def+' '+esc(r.defense)+'</p>';
+  h+='<p><b>'+(r.held?t.held:t.free)+'</b></p><p class="note">'+t.shot+'</p>';
+ }
+ el.className='result on '+cls;el.innerHTML=h;
+}
+function check(raw){
+ var code=String(raw||'').trim();var i=code.indexOf('v=');if(i>=0)code=decodeURIComponent(code.slice(i+2).split('&')[0]);
+ i=code.indexOf('verify/');if(i>=0)code=code.slice(i+7);
+ if(!code)return;
+ var el=document.getElementById('res');el.className='result on';el.textContent=T[L].wait;
+ fetch(SB+'/rest/v1/rpc/verify_copy_public',{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify({p_code:code})})
+  .then(function(r){if(!r.ok)throw 0;return r.json();})
+  .then(function(rows){show(rows&&rows[0]?rows[0]:{status:'unknown'});})
+  .catch(function(){show({err:true});});
+}
+document.getElementById('lang').addEventListener('click',function(){L=L==='he'?'en':'he';try{localStorage.setItem('bulu_lang',L);}catch(e){}apply();});
+document.getElementById('vf').addEventListener('submit',function(e){e.preventDefault();check(document.getElementById('code').value);});
+apply();
+var q=new URLSearchParams(location.search).get('v');
+if(q){document.getElementById('code').value=q;check(q);}
+})();
+</script>
+</body>
+</html>
