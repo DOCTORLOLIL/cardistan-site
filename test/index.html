@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>כארדיסטאן | גרסת ניסיון</title>
+<link rel="icon" type="image/png" href="/icon.png">
+<style>
+:root{--bg:#070A12;--panel:#0E1424;--line:#24304A;--ink:#EEF2FA;--mut:#A9B4CA;--gold:#FFD27A;--warn:#FFB020}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#1B2A55 0%,var(--bg) 60%);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;line-height:1.6;font-size:17px;min-height:100vh}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+header{display:flex;justify-content:space-between;align-items:center;max-width:720px;margin:0 auto;padding:16px 20px}
+button{font:inherit;cursor:pointer;min-height:48px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--ink);padding:0 18px;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:8px 20px 48px;text-align:center}
+img.logo{width:112px;height:112px;border-radius:26px;box-shadow:0 0 50px #3C8DFF66}
+h1{font-size:clamp(30px,6vw,44px);margin:14px 0 2px;color:var(--gold)}
+.dl{display:inline-flex;align-items:center;gap:10px;margin:18px 0 6px;padding:14px 28px;border-radius:16px;background:linear-gradient(180deg,#FFE08A,#D99A1E);color:#1A1200;font-weight:900;font-size:20px;text-decoration:none;box-shadow:0 8px 26px #D99A1E66}
+.dl[aria-disabled="true"]{filter:grayscale(1);opacity:.6;pointer-events:none}
+.ver{color:var(--mut);font-size:15px}
+section{text-align:start;background:linear-gradient(180deg,#121A30,var(--panel));border:1px solid var(--line);border-radius:20px;padding:18px 22px;margin:22px 0}
+h2{margin:0 0 8px;font-size:20px}
+ol,ul{padding-inline-start:22px;margin:4px 0}
+li{margin:4px 0}
+footer{text-align:center;color:var(--mut);font-size:14px;padding:16px}
+footer a{color:var(--mut)}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" style="color:var(--mut);text-decoration:none">cardistan.bulu.ltd</a>
+  <button id="lang" type="button" aria-label="English">EN</button>
+</header>
+<main>
+  <img class="logo" src="/icon.png" alt="">
+  <h1 data-he="גרסת ניסיון" data-en="Test version"></h1>
+  <p data-he="תודה שאתם עוזרים לנו לבדוק את כארדיסטאן! הגרסה לאנדרואיד בלבד, ועוד לא סופית." data-en="Thanks for helping us test Cardistan! Android only, and not final yet."></p>
+  <a class="dl" id="dl" href="/download/cardistan-test.apk" download aria-disabled="true">&#11015; <span data-he="הורדה לאנדרואיד" data-en="Download for Android"></span></a>
+  <div class="ver" id="ver" role="status"></div>
+
+  <section>
+    <h2 data-he="איך מתקינים" data-en="How to install"></h2>
+    <ol>
+      <li data-he="לוחצים על &quot;הורדה לאנדרואיד&quot; ופותחים את הקובץ שירד." data-en="Tap &quot;Download for Android&quot; and open the downloaded file."></li>
+      <li data-he="הטלפון ישאל אם לאפשר התקנה ממקור לא ידוע. מאשרים לדפדפן או לאפליקציית הקבצים. זה רגיל בגרסה שלא מגיעה מהחנות." data-en="Your phone will ask to allow installs from an unknown source. Allow it for the browser or the files app. This is normal for a version that isn't from the store."></li>
+      <li data-he="אם כבר מותקנת גרסה קודמת וההתקנה נכשלת, מוחקים אותה ומתקינים שוב." data-en="If an older version is installed and the install fails, uninstall it and try again."></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 data-he="כניסה" data-en="Signing in"></h2>
+    <ul>
+      <li data-he="הרשמה במייל וסיסמה עובדת לכולם." data-en="Email and password sign-up works for everyone."></li>
+      <li data-he="&quot;המשך עם Google&quot; עובד רק למי שנוסף לרשימת הנסיינים. רוצים? שלחו לנו את כתובת הג'ימייל שלכם." data-en="&quot;Continue with Google&quot; works only for people on the tester list. Want in? Send us your Gmail address."></li>
+      <li data-he="כדי להצטרף לאלבום צריך קישור הזמנה או QR ממפיץ." data-en="To join an album you need an invite link or QR from a distributor."></li>
+    </ul>
+  </section>
+</main>
+<footer>&copy; 2026 bulu.ltd · <a href="https://bulu.ltd/accessibility/" data-he="הצהרת נגישות" data-en="Accessibility statement"></a></footer>
+<script>
+(function(){
+var L='he';
+try{var s=localStorage.getItem('bulu_lang');if(s==='he'||s==='en')L=s;else L=((navigator.language||'he').toLowerCase().indexOf('he')===0)?'he':'en';}catch(e){}
+var info=null;
+function ver(){
+ var el=document.getElementById('ver');
+ if(!info){el.textContent=L==='he'?'עוד אין גרסה להורדה. נסו שוב בקרוב.':'No version to download yet. Check back soon.';return;}
+ el.textContent=(L==='he'?'גרסה מתאריך ':'Version of ')+info.date+(info.size?' · '+info.size:'');
+}
+function apply(){
+ document.documentElement.lang=L;document.documentElement.dir=L==='he'?'rtl':'ltr';
+ document.title=L==='he'?'כארדיסטאן | גרסת ניסיון':'Cardistan | Test version';
+ var n=document.querySelectorAll('[data-he]');for(var i=0;i<n.length;i++)n[i].textContent=n[i].getAttribute('data-'+L);
+ var b=document.getElementById('lang');b.textContent=L==='he'?'EN':'עב';b.setAttribute('aria-label',L==='he'?'English':'עברית');
+ ver();
+}
+document.getElementById('lang').addEventListener('click',function(){L=L==='he'?'en':'he';try{localStorage.setItem('bulu_lang',L);}catch(e){}apply();});
+fetch('/download/version.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();})
+ .then(function(j){info=j;document.getElementById('dl').removeAttribute('aria-disabled');ver();}).catch(function(){ver();});
+apply();
+})();
+</script>
+</body>
+</html>
