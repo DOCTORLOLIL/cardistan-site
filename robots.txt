@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /test/
+Disallow: /download/
+Sitemap: https://cardistan.bulu.ltd/sitemap.xml
